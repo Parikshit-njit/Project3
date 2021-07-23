@@ -92,7 +92,7 @@ def api_browse() -> str:
 @app.route('/api/v1/addresses/<int:address_id>', methods=['GET'])
 def api_retrieve(address_id) -> str:
     cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM addresses WHERE id=%s', city_id)
+    cursor.execute('SELECT * FROM addresses WHERE id=%s', address_id)
     result = cursor.fetchall()
     json_result = json.dumps(result);
     resp = Response(json_result, status=200, mimetype='application/json')
