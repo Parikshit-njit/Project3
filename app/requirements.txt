@@ -2,3 +2,4 @@ Flask
 mysql-connector
 simplejson
 jinja2
+Flask-MySQL==1.5.2
