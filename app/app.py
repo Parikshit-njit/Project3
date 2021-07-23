@@ -64,7 +64,7 @@ def form_insert_post():
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('Fname'), request.form.get('Lname'), request.form.get('Address'),
                  request.form.get('City'), request.form.get('State'),
-                 request.form.get('Zip_Code'), address_id)
+                 request.form.get('Zip_Code'))
     sql_insert_query = """INSERT INTO addresses (Fname,Lname,Address,City,State,Zip_Code) VALUES (%s, %s,%s, %s,%s, %s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
