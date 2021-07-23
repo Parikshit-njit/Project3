@@ -79,54 +79,54 @@ def form_delete_post(address_id):
     return redirect("/", code=302)
 
 
-# @app.route('/api/v1/cities', methods=['GET'])
-# def api_browse() -> str:
-#     cursor = mysql.get_db().cursor()
-#     cursor.execute('SELECT * FROM tblCitiesImport')
-#     result = cursor.fetchall()
-#     json_result = json.dumps(result);
-#     resp = Response(json_result, status=200, mimetype='application/json')
-#     return resp
+@app.route('/api/v1/addresses', methods=['GET'])
+def api_browse() -> str:
+    cursor = mysql.get_db().cursor()
+    cursor.execute('SELECT * FROM addresses')
+    result = cursor.fetchall()
+    json_result = json.dumps(result);
+    resp = Response(json_result, status=200, mimetype='application/json')
+    return resp
 
 
-# @app.route('/api/v1/cities/<int:city_id>', methods=['GET'])
-# def api_retrieve(city_id) -> str:
-#     cursor = mysql.get_db().cursor()
-#     cursor.execute('SELECT * FROM tblCitiesImport WHERE id=%s', city_id)
-#     result = cursor.fetchall()
-#     json_result = json.dumps(result);
-#     resp = Response(json_result, status=200, mimetype='application/json')
-#     return resp
-#
-#
-# @app.route('/api/v1/cities/<int:city_id>', methods=['PUT'])
-# def api_edit(city_id) -> str:
-#     cursor = mysql.get_db().cursor()
-#     content = request.json
-#     inputData = (content['fldName'], content['fldLat'], content['fldLong'],
-#                  content['fldCountry'], content['fldAbbreviation'],
-#                  content['fldCapitalStatus'], content['fldPopulation'],city_id)
-#     sql_update_query = """UPDATE tblCitiesImport t SET t.fldName = %s, t.fldLat = %s, t.fldLong = %s, t.fldCountry =
-#         %s, t.fldAbbreviation = %s, t.fldCapitalStatus = %s, t.fldPopulation = %s WHERE t.id = %s """
-#     cursor.execute(sql_update_query, inputData)
-#     mysql.get_db().commit()
-#     resp = Response(status=200, mimetype='application/json')
-#     return resp
-#
-# @app.route('/api/v1/cities', methods=['POST'])
-# def api_add() -> str:
-#
-#     content = request.json
-#
-#     cursor = mysql.get_db().cursor()
-#     inputData = (content['fldName'], content['fldLat'], content['fldLong'],
-#                  content['fldCountry'], content['fldAbbreviation'],
-#                  content['fldCapitalStatus'], request.form.get('fldPopulation'))
-#     sql_insert_query = """INSERT INTO tblCitiesImport (fldName,fldLat,fldLong,fldCountry,fldAbbreviation,fldCapitalStatus,fldPopulation) VALUES (%s, %s,%s, %s,%s, %s,%s) """
-#     cursor.execute(sql_insert_query, inputData)
-#     mysql.get_db().commit()
-#     resp = Response(status=201, mimetype='application/json')
-#     return resp
+@app.route('/api/v1/addresses/<int:address_id>', methods=['GET'])
+def api_retrieve(city_id) -> str:
+    cursor = mysql.get_db().cursor()
+    cursor.execute('SELECT * FROM addresses WHERE id=%s', city_id)
+    result = cursor.fetchall()
+    json_result = json.dumps(result);
+    resp = Response(json_result, status=200, mimetype='application/json')
+    return resp
+
+
+@app.route('/api/v1/addresses/<int:address_id>', methods=['PUT'])
+def api_edit(address_id) -> str:
+    cursor = mysql.get_db().cursor()
+    content = request.json
+    inputData = (content['Fname'], content['Lname'], content['Address'],
+                 content['City'], content['State'],
+                 content['Zip_Code'], address_id)
+    sql_update_query = """UPDATE addresses t SET t.Fname = %s, t.Lname = %s, t.Address = %s, t.City =
+        %s, t.State = %s, t.Zip_Code = %s WHERE t.id = %s """
+    cursor.execute(sql_update_query, inputData)
+    mysql.get_db().commit()
+    resp = Response(status=200, mimetype='application/json')
+    return resp
+
+@app.route('/api/v1/addresses', methods=['POST'])
+def api_add() -> str:
+
+    content = request.json
+
+    cursor = mysql.get_db().cursor()
+    inputData = (content['Fname'], content['Lname'], content['Address'],
+                 content['City'], content['State'],
+                 content['Zip_Code'], request.form.get('fldPopulation'))
+    sql_insert_query = """INSERT INTO addresses (Fname,Lname,Address,City,State,Zip_Code,fldPopulation) VALUES (%s, %s,%s, %s,%s, %s,%s) """
+    cursor.execute(sql_insert_query, inputData)
+    mysql.get_db().commit()
+    resp = Response(status=201, mimetype='application/json')
+    return resp
 #
 # @app.route('/api/v1/cities/<int:city_id>', methods=['DELETE'])
 # def api_delete(city_id) -> str:
