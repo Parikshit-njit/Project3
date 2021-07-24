@@ -52,11 +52,11 @@ This project is a homework assignment to teach how to get Pycharm setup with Doc
 <h3> Postman Showing Edit of Record </h3>
 <h4>Request Screenshot</h4>
 
-<img src="screenshots/Edit Record Page Postman - Req.png"></img>
+<img src="screenshots/Edit Record Page Postman Req.png"></img>
 <br>
 
 <h4>Response Screenshot</h4>
 
-<img src="screenshots/Edit Record Page Postman Res.png"></img>
+<img src="screenshots/Edit Record Postman Res.png"></img>
 
 <br>
