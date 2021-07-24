@@ -17,6 +17,7 @@ app.config['MYSQL_DATABASE_PORT'] = 3306
 app.config['MYSQL_DATABASE_DB'] = 'addressData'
 mysql.init_app(app)
 
+
 @app.route('/', methods=['GET'])
 def index():
     user = {'username': 'Address Project'}
@@ -54,6 +55,7 @@ def form_update_post(address_id):
     mysql.get_db().commit()
     return redirect("/", code=302)
 
+
 @app.route('/address/new', methods=['GET'])
 def form_insert_get():
     return render_template('new.html', title='New Address Form')
@@ -69,6 +71,7 @@ def form_insert_post():
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
+
 
 @app.route('/delete/<int:address_id>', methods=['POST'])
 def form_delete_post(address_id):
@@ -113,6 +116,7 @@ def api_edit(address_id) -> str:
     resp = Response(status=200, mimetype='application/json')
     return resp
 
+
 @app.route('/api/v1/addresses', methods=['POST'])
 def api_add() -> str:
 
@@ -121,21 +125,23 @@ def api_add() -> str:
     cursor = mysql.get_db().cursor()
     inputData = (content['Fname'], content['Lname'], content['Address'],
                  content['City'], content['State'],
-                 content['Zip_Code'], request.form.get('fldPopulation'))
-    sql_insert_query = """INSERT INTO addresses (Fname,Lname,Address,City,State,Zip_Code,fldPopulation) VALUES (%s, %s,%s, %s,%s, %s,%s) """
+                 content['Zip_Code'])
+    sql_insert_query = """INSERT INTO addresses (Fname,Lname,Address,City,State,Zip_Code) VALUES (%s, %s,%s, %s,%s, %s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     resp = Response(status=201, mimetype='application/json')
     return resp
-#
-# @app.route('/api/v1/cities/<int:city_id>', methods=['DELETE'])
-# def api_delete(city_id) -> str:
-#     cursor = mysql.get_db().cursor()
-#     sql_delete_query = """DELETE FROM tblCitiesImport WHERE id = %s """
-#     cursor.execute(sql_delete_query, city_id)
-#     mysql.get_db().commit()
-#     resp = Response(status=200, mimetype='application/json')
-#     return resp
+
+
+@app.route('/api/v1/addresses/<int:address_id>', methods=['DELETE'])
+def api_delete(address_id) -> str:
+    cursor = mysql.get_db().cursor()
+    sql_delete_query = """DELETE FROM addresses WHERE id = %s """
+    cursor.execute(sql_delete_query, address_id)
+    mysql.get_db().commit()
+    resp = Response(status=200, mimetype='application/json')
+    return resp
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
