@@ -60,3 +60,33 @@ This project is a homework assignment to teach how to get Pycharm setup with Doc
 <img src="screenshots/Edit Record Postman Res.png"></img>
 
 <br>
+
+<hr>
+<h3> HTML Showing Edit of Record </h3>
+
+<img src="screenshots/Edit Record Page Preview.png"></img>
+
+<br>
+<hr>
+
+
+<h3> Postman Showing Delete of Record </h3>
+<h4>Request Screenshot</h4>
+
+<img src="screenshots/Delete Record Postman - Req.png"></img>
+<br>
+
+<h4>Response Screenshot</h4>
+
+<img src="screenshots/Delete Record Postman - Res.png"></img>
+
+<br>
+
+<hr>
+<h3> HTML Showing Delete of Record </h3>
+
+<img src="screenshots/Delete Record Page Preview.png"></img>
+
+<br>
+<hr>
+
