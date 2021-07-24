@@ -9,31 +9,35 @@ This project is a homework assignment to teach how to get Pycharm setup with Doc
 
 <br>
 
-![postman_listing_all_2](screenshots/Home Page Postman.png)
+<img src="screenshots/Home Page Postman.png"></img>
 
 <hr>
 
-### HTML Page Listing All Records
-![html_listing_all](screenshots/Home Page Preview.png)
+<h3>HTML Page Listing All Records</h3>
+<img src="screenshots/Home Page Preview.png"></img>
 
 <hr>
 
-### Postman Showing One Record with a Get Request
-![postman_listing_record_1](screenshots/JSON One Record Postman.png)
+<h3>Postman Showing One Record with a Get Request</h3>
+<img src="screenshots/JSON One Record Postman.png"></img>
 
-![postman_listing_record_2](screenshots/Page One Record Postman.png)
-
-<hr>
-
-### HTML Page Showing One Record with a Get Request
-![html_listing_one](screenshots/Page One Record Preview.png)
+<img src="screenshots/Page One Record Postman.png"></img>
 
 <hr>
 
-### Postman Showing Creation of Record
-#### Request Screenshot
-![postman_creating_record_1](screenshots/Create Record Postman Req.png)
+<h3>HTML Page Showing One Record with a Get Request</h3>
 
-#### Response Screenshot
-![postman_creating_record_2](screenshots/Create Record Postman Res.png)
+<img src="screenshots/Page One Record Preview.png"></img>
 
+<hr>
+
+<h3>Postman Showing Creation of Record</h3>
+<h4>Request Screenshot</h4>
+
+<img src="screenshots/Create Record Postman Req.png"></img>
+
+<h4>Response Screenshot</h4>
+
+<img src="screenshots/Create Record Postman Res.png"></img>
+                                                   
+<hr>
