@@ -1,7 +1,7 @@
 # Project Description
 This project is a homework assignment to teach how to get Pycharm setup with Docker, Flask, MySQL, and Postman.
 
-# Screenshots <i> (Link: https://drive.google.com/file/d/17GowFidq5dqfs6wOjUn3hSDMDdgp_K80/view?usp=sharing)
+# Screenshots <i> <a href="https://drive.google.com/file/d/17GowFidq5dqfs6wOjUn3hSDMDdgp_K80/view?usp=sharing">Link to word file</a>
 <h3> Postman Listing All Records </h3>
 
 <img src="screenshots/JSON All Records Postman.png"></img>
